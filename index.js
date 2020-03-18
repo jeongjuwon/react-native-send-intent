@@ -65,6 +65,12 @@ var SendIntentAndroid = {
     shareTextToLine(options) {
         RNSendIntentAndroid.shareTextToLine(options);
     },
+    openKFTC(options) {
+        RNSendIntentAndroid.openKFTC(options);
+    },
+    openPaymentApp(url) {
+        return RNSendIntentAndroid.openPaymentApp(url);
+    },
     shareImageToInstagram(type, mediaPath) {
         RNSendIntentAndroid.shareImageToInstagram(type, mediaPath);
     },
