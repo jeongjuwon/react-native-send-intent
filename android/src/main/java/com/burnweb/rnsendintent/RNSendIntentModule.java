@@ -687,14 +687,16 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
     }
     
     @ReactMethod
-    public void openKFTC(ReadableMap options) {
+    public void openKFTC(String options) {
 
         ComponentName cn = new ComponentName("com.kftc.bankpay.android",
-                            "com.kftc.bankpay.android.activity.MainActivity"));
+                "com.kftc.bankpay.android.activity.MainActivity");
         Intent shareIntent = new Intent(Intent.ACTION_MAIN);
         shareIntent.putExtra("requestInfo", options);
         shareIntent.setComponent(cn);
-        this.reactContext.startActivityForResult(shareIntent, 1);
+
+        Activity currentActivity = getCurrentActivity();
+        currentActivity.startActivityForResult(shareIntent, 1);
     }
 
 
